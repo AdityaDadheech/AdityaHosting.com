@@ -1,18 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nova+Round&family=Source+Serif+Pro:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Round&family=Source+Serif+Pro:wght@300&display=swap");
+
+
 body {
   background-color: #d8b4fe;
 }
-
+/* this is used to remove extra margin and padding */
 * {
   margin: 0;
   padding: 0;
 }
 
-nav{
-    font-family: 'Source Serif Pro', serif;
+nav {
+  font-family: "Source Serif Pro", serif;
 }
 
-nav ul{
-    display: flex;
+/* displaying nav bar in inline using display: flex and align items: center */
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 65px;
+  background-color: #9333ea;
+  color: white;
+}
+
+/* gave padding in list items to make nav bar good */
+nav ul li {
+  padding: 0px 10px;
+}
+
+/* resizing the image */
+.brand img {
+  width: 58px;
+  padding: 0px 8px;
+}
+
+/* aligning Musico name in center with image using display:flex and align-items: center */
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 1.3rem;
 }

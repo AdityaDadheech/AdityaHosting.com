@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&family=Source+Serif+Pro:wght@300&display=swap');
+body {
+  background-color: #d8b4fe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+    font-family: 'Source Serif Pro', serif;
+}
+
+nav ul{
+    display: flex;
+}

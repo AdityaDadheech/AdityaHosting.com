@@ -3,7 +3,7 @@
 
 
 body {
-  background-color: #d8b4fe;
+  background-color: rgb(241, 225, 230);
 }
 /* this is used to remove extra margin and padding */
 * {
@@ -42,4 +42,41 @@ nav ul li {
   align-items: center;
   font-weight: bolder;
   font-size: 1.3rem;
+}
+
+.container{
+    min-height: 65vh;
+    background-color: white;
+    margin: 30px auto;
+    width: 70%;
+    border-radius: 15px;
+    padding: 10px;
+    background: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.bottom{
+    position: sticky;
+    background-image: linear-gradient(to right, #7e22ce, #f43f5e);
+    bottom: 0;
+    color: white;
+    height:100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#myProgressBar{
+    width:70vw;
+}
+
+.icons{
+    margin-top: 20px;
+}
+
+.icons i{
+    cursor: pointer;
+    margin-left: 10px;
 }

@@ -45,6 +45,7 @@ nav ul li {
 }
 
 .container{
+    font-family: "Source Serif Pro", serif;
     min-height: 65vh;
     background-color: white;
     margin: 30px auto;
@@ -70,6 +71,7 @@ nav ul li {
 
 #myProgressBar{
     width:70vw;
+    cursor: pointer;
 }
 
 .icons{
@@ -79,4 +81,45 @@ nav ul li {
 .icons i{
     cursor: pointer;
     margin-left: 10px;
+}
+
+.songsItem img{
+    width: 40px;
+    padding: 10px;
+}
+
+.songsItem{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 300px;
+    background-color: rgb(28, 29, 29);
+    color: white;
+    border-radius: 54px;
+    opacity: .8;
+    margin-top:10px ;
+    cursor: pointer;
+}
+.songsItem:hover{
+    filter: brightness(0.8);
+}
+
+.timeStamp{
+    padding-left: 40px;
+}
+.timeStamp i{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.songsInfo{
+    font-family: "Source Serif Pro", serif;
+    position: absolute;
+    left:14.5vw;
+}
+.songsInfo img{
+    width: 30px;
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
 }

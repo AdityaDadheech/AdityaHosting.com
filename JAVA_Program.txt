@@ -1,0 +1,182 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Customer {
+    int employeeId;
+    String name;
+    String email;
+    String password;
+    String address;
+    String contactNumber;
+
+    Customer(int employeeId, String name, String email, String password, String address, String contactNumber) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.address = address;
+        this.contactNumber = contactNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee ID: " + employeeId + "\n" +
+               "Name: " + name + "\n" +
+               "Email: " + email + "\n" +
+               "Password: " + password + "\n" +
+               "Address: " + address + "\n" +
+               "Contact Number: " + contactNumber;
+    }
+}
+
+public class EmployeeRegistration {
+    static ArrayList<Customer> customers = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("Choose an option:");
+            System.out.println("1. Register Employee");
+            System.out.println("2. Enter Customer Details");
+            System.out.println("3. View Customer Details by SSN");
+            System.out.println("4. Update Customer Details");
+            System.out.println("5. Delete Customer Details");
+            System.out.println("6. Exit");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();  // Consume newline character
+
+            switch (choice) {
+                case 1:
+                    registerEmployee();
+                    break;
+                case 2:
+                    enterCustomerDetails();
+                    break;
+                case 3:
+                    viewCustomerDetailsBySSN();
+                    break;
+                case 4:
+                    updateCustomerDetails();
+                    break;
+                case 5:
+                    deleteCustomerDetails();
+                    break;
+                case 6:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    public static void registerEmployee() {
+        int employeeId = (int) (Math.random() * 9000000) + 1000000; // Random 7 digit number
+        System.out.print("Enter Employee Name (Max 50 characters): ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Email: ");
+        String email = scanner.nextLine();
+        System.out.print("Enter Password (Max 30 characters): ");
+        String password = scanner.nextLine();
+        System.out.print("Enter Address (Max 100 characters): ");
+        String address = scanner.nextLine();
+        System.out.print("Enter Contact Number (Max 10 characters): ");
+        String contactNumber = scanner.nextLine();
+
+        Customer employee = new Customer(employeeId, name, email, password, address, contactNumber);
+        customers.add(employee);
+        System.out.println("Customer Registration is successful.");
+    }
+
+    public static void enterCustomerDetails() {
+        System.out.print("Enter Customer SSN No (7 digits): ");
+        String ssn = scanner.nextLine();
+        System.out.print("Enter Customer Name (Max 50 characters): ");
+        String name = scanner.nextLine();
+        System.out.print("Enter Email: ");
+        String email = scanner.nextLine();
+        System.out.print("Enter Address (Max 100 characters): ");
+        String address = scanner.nextLine();
+        System.out.print("Enter Contact Number (Max 10 characters): ");
+        String contactNumber = scanner.nextLine();
+        System.out.print("Enter Aadhar Number (Max 12 characters): ");
+        String aadharNumber = scanner.nextLine();
+        System.out.print("Enter PAN Number (Max 10 characters): ");
+        String panNumber = scanner.nextLine();
+        System.out.print("Enter Account Number (Max 20 characters): ");
+        String accountNumber = scanner.nextLine();
+
+        // Example of adding customer data to the list
+        Customer customer = new Customer(Integer.parseInt(ssn), name, email, null, address, contactNumber);
+        customers.add(customer);
+        System.out.println("Customer Details Entered successfully.");
+    }
+
+    public static void viewCustomerDetailsBySSN() {
+        System.out.print("Enter SSN to view details: ");
+        int ssn = scanner.nextInt();
+        scanner.nextLine();  // Consume newline character
+
+        boolean found = false;
+        for (Customer customer : customers) {
+            if (customer.employeeId == ssn) {
+                System.out.println(customer);
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Customer data not found.");
+        }
+    }
+
+    public static void updateCustomerDetails() {
+        System.out.print("Enter SSN to update details: ");
+        int ssn = scanner.nextInt();
+        scanner.nextLine();  // Consume newline character
+
+        boolean found = false;
+        for (Customer customer : customers) {
+            if (customer.employeeId == ssn) {
+                System.out.println("Current details:\n" + customer);
+                System.out.print("Enter new Name (Max 50 characters): ");
+                customer.name = scanner.nextLine();
+                System.out.print("Enter new Email: ");
+                customer.email = scanner.nextLine();
+                System.out.print("Enter new Address (Max 100 characters): ");
+                customer.address = scanner.nextLine();
+                System.out.print("Enter new Contact Number (Max 10 characters): ");
+                customer.contactNumber = scanner.nextLine();
+                System.out.println("Customer details updated successfully.");
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Customer data not found.");
+        }
+    }
+
+    public static void deleteCustomerDetails() {
+        System.out.print("Enter SSN to delete details: ");
+        int ssn = scanner.nextInt();
+        scanner.nextLine();  // Consume newline character
+
+        boolean found = false;
+        for (Customer customer : customers) {
+            if (customer.employeeId == ssn) {
+                customers.remove(customer);
+                System.out.println("Customer data deleted successfully.");
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Customer data is not Available or Deleted.");
+        }
+    }
+}

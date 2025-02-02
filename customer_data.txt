@@ -1,0 +1,1505 @@
+/* 
+-------------customer_data_updation.html--------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="/css_files/customer_data_updation.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Search & Update Customer</h2>
+
+        <!-- Search Section -->
+        <div class="search-container">
+            <label for="searchSsn">Enter SSN ID:</label>
+            <input type="text" id="searchSsn" maxlength="12" placeholder="Enter SSN ID">
+            <button onclick="searchCustomer()">Search</button>
+        </div>
+
+        <!-- Table for Customer Details -->
+        <div id="customerTableContainer">
+            <table id="customerTable">
+                <thead>
+                    <tr>
+                        <th>SSN ID</th>
+                        <th>Name</th>
+                        <th>Account Number</th>
+                        <th>IFSC Code</th>
+                        <th>Balance</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="customerData"></tbody>
+            </table>
+        </div>
+
+        <!-- Success Message -->
+        <p id="successMessage"></p>
+    </div>
+
+    <script src="/JavaScript/customer_data_updation.js"></script>
+</body>
+</html>
+
+
+------------customer_reg.html-------------------
+
+<!-- customer_registration.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="/css_files/customer_registration.css">
+</head>
+<body>
+    <div class="main-container">
+        <h2>Customer Registration</h2>
+        <form id="customerForm">
+            <label for="ssn">Customer SSN ID:</label>
+            <input type="text" id="ssn" required>
+            
+            <label for="name">Customer Name:</label>
+            <input type="text" id="name" required>
+            
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" required>
+            
+            <label for="ifsc">IFSC Code:</label>
+            <input type="text" id="ifsc" required>
+            
+            <label for="balance">Account Balance:</label>
+            <input type="number" id="balance" required>
+            
+            <label for="adhaar">Aadhar Card No.:</label>
+            <input type="text" id="adhaar" required>
+            
+            <label for="pan">PAN Card No.:</label>
+            <input type="text" id="pan" required>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <label for="maritalStatus">Marital Status:</label>
+            <select id="maritalStatus" required>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+            </select>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" required>
+            
+            <button type="submit">Register Customer</button>
+        </form>
+    </div>
+    
+    <!-- Success Message Popup -->
+    <div id="popup" class="popup">
+        <p>Customer Registration Successful!</p>
+        <button id="closePopup">Close</button>
+    </div>
+
+    <script src="/JavaScript/customer_registration.js"></script>
+</body>
+</html>
+
+
+------------emp_login.html-------------
+
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login</title>
+    <link rel="stylesheet" href="/css_files/login.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Employee Login</h2>
+        <form id="loginForm">
+            <label for="loginEmpId">Employee ID:</label>
+            <input type="text" id="loginEmpId" maxlength="10" required>
+            
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" maxlength="30" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="loginAcknowledge" class="acknowledgment">
+        <p style="color: green;">Employee Login successful.</p>
+        <button onclick="window.location.href='index.html'">Go to Home</button>
+    </div>
+
+    <script src="/JavaScript/login.js"></script>
+</body>
+</html>
+
+
+-------------emp_reg.html-------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+    <link rel="stylesheet" href="/css_files/registration.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="heading-container">
+            <h2 class="heading">Employee Registration</h2>
+        </div>
+        <div class="form-container">
+            <form id="registrationForm">
+                <label for="empId">Employee ID:</label>
+                <input type="text" id="empId" disabled>
+                
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" maxlength="50" required>
+                
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" maxlength="50" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" maxlength="100" required></textarea>
+                
+                <label for="contact">Contact Number:</label>
+                <input type="text" id="contact" maxlength="10" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" maxlength="30" required>
+                
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" maxlength="30" required>
+                
+                <button type="submit">Register</button>
+            </form>
+            <p>Already registered? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
+    <div id="acknowledgment" class="acknowledgment">
+        <p id="ackMessage" style="color: green;">Employee Registration successful.</p>
+        <p id="empDetails"></p>
+        <button onclick="window.location.href='emp_login.html'">Go to Login</button>
+    </div>
+    <script src="/JavaScript/registration.js"></script>
+</body>
+</html>
+
+
+---------------index.html --------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome</h1>
+</body>
+</html>
+
+
+-----------loan_registration.html----------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Management</title>
+    <link rel="stylesheet" href="/css_files/customer_data_updation.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Search & Update Loan</h2>
+
+        <div class="search-container">
+            <label for="searchSsn">Enter SSN ID:</label>
+            <input type="text" id="searchSsn" maxlength="12" placeholder="Enter SSN ID">
+            <button onclick="searchLoan()">Search</button>
+        </div>
+
+        <div id="loanTableContainer">
+            <table id="loanTable">
+                <thead>
+                    <tr>
+                        <th>SSN ID</th>
+                        <th>Name</th>
+                        <th>Occupation</th>
+                        <th>Employer Name</th>
+                        <th>Employer Address</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Marital Status</th>
+                        <th>Contact Number</th>
+                        <th>Loan Amount</th>
+                        <th>Loan Duration</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="loanData"></tbody>
+            </table>
+        </div>
+
+        <p id="successMessage"></p>
+    </div>
+
+    <script src="/JavaScript/loan_updation.js"></script>
+</body>
+</html>
+
+
+--------loan_updation.html----------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Management</title>
+    <link rel="stylesheet" href="/css_files/customer_data_updation.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Search & Update Loan</h2>
+
+        <div class="search-container">
+            <label for="searchSsn">Enter SSN ID:</label>
+            <input type="text" id="searchSsn" maxlength="12" placeholder="Enter SSN ID">
+            <button onclick="searchLoan()">Search</button>
+        </div>
+
+        <div id="loanTableContainer">
+            <table id="loanTable">
+                <thead>
+                    <tr>
+                        <th>SSN ID</th>
+                        <th>Name</th>
+                        <th>Occupation</th>
+                        <th>Employer Name</th>
+                        <th>Employer Address</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Marital Status</th>
+                        <th>Contact Number</th>
+                        <th>Loan Amount</th>
+                        <th>Loan Duration</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="loanData"></tbody>
+            </table>
+        </div>
+
+        <p id="successMessage"></p>
+    </div>
+
+    <script src="/JavaScript/loan_updation.js"></script>
+</body>
+</html>
+
+
+
+-------loan_registration.html---------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Request Form</title>
+    <link rel="stylesheet" href="/css_files/loan_registration.css">
+</head>
+<body>
+    <div class="main-container">
+        <h2 class="heading">Loan Request Form</h2>
+        <form id="loanRequestForm">
+
+            <label for="ssnId">Customer SSN ID</label>
+            <input type="text" id="ssnId" required>
+
+            <label for="customerName">Customer Name</label>
+            <input type="text" id="customerName" required>
+
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation" required>
+
+            <label for="employerName">Employer Name</label>
+            <input type="text" id="employerName" required>
+
+            <label for="employerAddress">Employer Address</label>
+            <textarea id="employerAddress" required></textarea>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="address">Address</label>
+            <textarea id="address" required></textarea>
+
+            <label for="maritalStatus">Marital Status</label>
+            <select id="maritalStatus">
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Widowed">Widowed</option>
+            </select>
+
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" id="contactNumber" required>
+
+            <label for="loanAmount">Loan Amount</label>
+            <input type="number" id="loanAmount" required>
+
+            <label for="loanDuration">Length of Loan (Duration in months)</label>
+            <input type="number" id="loanDuration" required>
+
+            <button type="submit">Submit Loan Request</button>
+        </form>
+    </div>
+
+    <script src="/JavaScript/loan_registration.js"></script>
+</body>
+</html>
+
+
+-----------transactions.html------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Registration</title>
+    <link rel="stylesheet" href="/css_files/transactions.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Transaction Registration</h2>
+        <form id="transactionForm">
+            <label>Transaction ID</label>
+            <input type="text" id="transactionId" disabled>
+
+            <label>Customer SSN ID</label>
+            <input type="text" id="ssnId" required>
+
+            <label>Customer Name</label>
+            <input type="text" id="customerName" required>
+
+            <label>Account ID</label>
+            <input type="text" id="accountId" required>
+
+            <label>Adhaar Card No.</label>
+            <input type="text" id="adhaarCard" required>
+
+            <label>Pan Card No.</label>
+            <input type="text" id="panCard" required>
+
+            <label>Address</label>
+            <textarea id="address" required></textarea>
+
+            <label>Date</label>
+            <input type="date" id="date" required>
+
+            <label>Contact Number</label>
+            <input type="text" id="contactNumber" required>
+
+            <label>Mode of Transaction</label>
+            <select id="modeOfTransaction">
+                <option value="Online">Online</option>
+                <option value="Cash">Cash</option>
+                <option value="Cheque">Cheque</option>
+            </select>
+
+            <label>Amount</label>
+            <input type="number" id="amount" required>
+
+            <label>Credit/Debit</label>
+            <select id="transactionType">
+                <option value="Credit">Credit</option>
+                <option value="Debit">Debit</option>
+            </select>
+
+            <button type="submit">Register Transaction</button>
+        </form>
+
+    </div>
+
+    <script src="/JavaScript/transaction.js"></script>
+</body>
+</html>
+
+*/
+
+/*
+-------------customer_data_updation.css-------------
+
+/* Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.container {
+    max-width: 90%;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #5c6bc0;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    background-color: #5c6bc0;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3f4c8c;
+}
+
+/* Table Styling */
+#customerTableContainer {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling within the container */
+}
+
+table {
+    width: 100%;
+    min-width: 700px; /* Prevents table from getting too small */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+th {
+    background-color: #5c6bc0;
+    color: white;
+}
+
+input[type="text"] {
+    border: none;
+    background: none;
+    text-align: center;
+    width: 100%;
+}
+
+#successMessage {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+    display: none;
+}
+
+
+----------customer_registration.css------------
+
+/* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Main container */
+.main-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Heading section */
+h2 {
+    font-size: 24px;
+    color: #5c6bc0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    padding: 12px;
+    background-color: #5c6bc0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3f4c8c;
+}
+
+/* Popup success message */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.popup p {
+    font-size: 18px;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+.popup button {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup button:hover {
+    background-color: #da190b;
+}
+
+/* Form sections */
+form .form-section {
+    margin-bottom: 20px;
+}
+
+/* Paragraph with link (for navigation) */
+p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #5c6bc0;
+}
+
+a:hover {
+    color: #3f4c8c;
+}
+
+/* Styling for input fields */
+input[type="text"], input[type="email"], input[type="number"], input[type="date"], select, textarea {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for input elements */
+input[type="text"]:disabled, input[type="email"]:disabled, input[type="number"]:disabled, input[type="date"]:disabled, textarea:disabled, select:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+----------loan_registration.css-----------
+
+/* Reset and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Main Container */
+.main-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    font-size: 22px;
+    color: #5c6bc0;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input Fields */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c6bc0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3f4c8c;
+}
+
+
+------login.css-----------
+
+/* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    max-width: 400px; /* Limit width for smaller form */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #5c6bc0;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 12px;
+    background-color: #5c6bc0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3f4c8c;
+}
+
+#loginAcknowledge{
+    display: none;
+}
+
+/* Ensure form elements fit within the screen */
+@media (max-height: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    label, input, button {
+        font-size: 12px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+
+-----------registration.css----------
+
+/* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Main container */
+.main-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Heading section */
+.heading-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading {
+    font-size: 24px;
+    color: #5c6bc0;
+}
+
+/* Form styling */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="text"]:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+button {
+    padding: 12px;
+    background-color: #5c6bc0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3f4c8c;
+}
+
+/* Paragraph with link */
+p {
+    text-align: center;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #5c6bc0;
+}
+
+a:hover {
+    color: #3f4c8c;
+}
+
+#acknowledgment{
+    display: none;
+}
+
+
+------------transactions.css-----------
+
+/* Reset and General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* Heading */
+.heading-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading {
+    font-size: 22px;
+    font-weight: bold;
+    color: #3f4c8c;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #5c6bc0;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+/* Disabled Field (For Auto-Generated ID) */
+input:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c6bc0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #3f4c8c;
+}
+
+/* Message */
+#message {
+    text-align: center;
+    font-size: 14px;
+    color: green;
+    margin-top: 10px;
+    display: none;
+}
+
+*/
+
+/*
+---------customer_data_updation.js----------
+
+// Function to Search Customer by SSN
+function searchCustomer() {
+    const ssn = document.getElementById("searchSsn").value;
+    const customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+    const customer = customers.find(c => c.ssn === ssn);
+
+    if (customer) {
+        displayCustomer(customer);
+    } else {
+        alert("Customer not found!");
+        document.getElementById("customerData").innerHTML = ""; 
+    }
+}
+
+// Function to Display Customer Data in Table
+function displayCustomer(customer) {
+    const tableBody = document.getElementById("customerData");
+    tableBody.innerHTML = `
+        <tr>
+            <td>${customer.ssn}</td>
+            <td><input type="text" id="name" value="${customer.name}"></td>
+            <td><input type="text" id="accountNumber" value="${customer.accountNumber}"></td>
+            <td><input type="text" id="ifscCode" value="${customer.ifsc}"></td>
+            <td><input type="text" id="balance" value="${customer.balance}"></td>
+            <td><input type="text" id="email" value="${customer.email}"></td>
+            <td><input type="text" id="contact" value="${customer.contact}"></td>
+            <td><button onclick="updateCustomer('${customer.ssn}')">Update</button></td>
+            <td><button class="deleteBtn" onclick="deleteCustomer(${customer.ssn})">Delete</button></td>
+        </tr>
+    `;
+}
+
+// Function to Update Customer Data
+function updateCustomer(ssn) {
+    const customers = JSON.parse(localStorage.getItem("customers")) || [];
+
+    const updatedCustomer = {
+        ssn: ssn, 
+        name: document.getElementById("name").value,
+        accountNumber: document.getElementById("accountNumber").value,
+        ifsc: document.getElementById("ifscCode").value,
+        balance: document.getElementById("balance").value,
+        email: document.getElementById("email").value,
+        contact: document.getElementById("contact").value
+    };
+
+    // Find and Update the Customer
+    const updatedCustomers = customers.map(customer => 
+        customer.ssn === ssn ? updatedCustomer : customer
+    );
+
+    // Save to Local Storage
+    localStorage.setItem("customers", JSON.stringify(updatedCustomers));
+
+    const successMessage = document.getElementById("successMessage");
+    successMessage.innerText = "Customer information updated successfully!";
+    successMessage.style.display = "block";
+
+    setTimeout(() => {
+        successMessage.style.display = "none";
+    }, 3000);
+}
+function deleteCustomer(ssn) {
+    let customers = JSON.parse(localStorage.getItem("customers")) || [];
+    const updatedCustomers = customers.filter(customer => customer.ssn.toString() !== ssn.toString());
+
+    console.log("Updated Customers:", updatedCustomers); 
+    localStorage.setItem("customers", JSON.stringify(updatedCustomers));
+    const successMessage = document.getElementById("successMessage");
+    successMessage.textContent = "Customer deleted successfully!";
+    successMessage.style.display = "block";
+
+    document.getElementById("customerData").innerHTML = "";
+    setTimeout(() => successMessage.style.display = "none", 2000);
+}
+
+
+-----------customer_registration.js-----------
+
+// customer_registration.js
+
+document.getElementById("customerForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Capture customer data
+    const ssn = document.getElementById("ssn").value;
+    const name = document.getElementById("name").value;
+    const accountNumber = document.getElementById("accountNumber").value;
+    const ifsc = document.getElementById("ifsc").value;
+    const balance = document.getElementById("balance").value;
+    const adhaar = document.getElementById("adhaar").value;
+    const pan = document.getElementById("pan").value;
+    const dob = document.getElementById("dob").value;
+    const gender = document.getElementById("gender").value;
+    const maritalStatus = document.getElementById("maritalStatus").value;
+    const email = document.getElementById("email").value;
+    const address = document.getElementById("address").value;
+    const contact = document.getElementById("contact").value;
+
+    // Create a customer object
+    const customerData = {
+        ssn: ssn,
+        name: name,
+        accountNumber: accountNumber,
+        ifsc: ifsc,
+        balance: balance,
+        adhaar: adhaar,
+        pan: pan,
+        dob: dob,
+        gender: gender,
+        maritalStatus: maritalStatus,
+        email: email,
+        address: address,
+        contact: contact
+    };
+
+    // Store customer data in localStorage (JSON format)
+    const customers = JSON.parse(localStorage.getItem("customers")) || []; 
+    let customerExists = customers.some(customer => customer.ssn === ssn);
+
+    if (customerExists) {
+        alert('Customer with this SSN already exists!');
+        return; // Don't proceed with registration
+    }
+
+    customers.push(customerData); // Add new customer data
+    localStorage.setItem("customers", JSON.stringify(customers)); // Store updated data
+
+    // Show success popup
+    document.getElementById("popup").style.display = "block";
+
+    // Close popup on button click
+    document.getElementById("closePopup").addEventListener("click", function() {
+        document.getElementById("popup").style.display = "none";
+    });
+
+    // Optionally, reset the form after submission
+    document.getElementById("customerForm").reset();
+});
+
+
+-----------loan_registration.js------------
+
+document.addEventListener("DOMContentLoaded", function () {
+    setLoanId();
+
+    document.getElementById("loanRequestForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        registerLoan();
+    });
+});
+
+function setLoanId() {
+    let loans = JSON.parse(localStorage.getItem("loans")) || [];
+    let nextId = loans.length > 0 ? loans[loans.length - 1].id + 1 : 1;
+}
+
+function registerLoan() {
+    let loans = JSON.parse(localStorage.getItem("loans")) || [];
+
+    let loan = {
+        ssn: document.getElementById("ssnId").value,
+        name: document.getElementById("customerName").value,
+        occupation: document.getElementById("occupation").value,
+        employerName: document.getElementById("employerName").value,
+        employerAddress: document.getElementById("employerAddress").value,
+        email: document.getElementById("email").value,
+        address: document.getElementById("address").value,
+        maritalStatus: document.getElementById("maritalStatus").value,
+        contact: document.getElementById("contactNumber").value,
+        loanAmount: document.getElementById("loanAmount").value,
+        loanDuration: document.getElementById("loanDuration").value
+    };
+
+    loans.push(loan);
+    localStorage.setItem("loans", JSON.stringify(loans));
+
+    setTimeout(() => {
+        document.getElementById("loanRequestForm").reset();
+        setLoanId();
+    }, 200);
+
+    alert('Loan Request Submitted Successfully!');
+}
+
+
+-----------loan_updation.js---------------
+
+// Function to Search Loan by SSN
+function searchLoan() {
+    const ssn = document.getElementById("searchSsn").value;
+    const loans = JSON.parse(localStorage.getItem("loans")) || [];
+
+    const loan = loans.find(l => l.ssn === ssn);
+
+    if (loan) {
+        displayLoan(loan);
+    } else {
+        alert("Loan not found!");
+        document.getElementById("loanData").innerHTML = "";
+    }
+}
+
+// Function to Display Loan Data in Table
+function displayLoan(loan) {
+    const tableBody = document.getElementById("loanData");
+    tableBody.innerHTML = `
+        <tr>
+            <td>${loan.ssn}</td>
+            <td><input type="text" id="name" value="${loan.name}"></td>
+            <td><input type="text" id="occupation" value="${loan.occupation}"></td>
+            <td><input type="text" id="employerName" value="${loan.employerName}"></td>
+            <td><input type="text" id="employerAddress" value="${loan.employerAddress}"></td>
+            <td><input type="text" id="email" value="${loan.email}"></td>
+            <td><input type="text" id="address" value="${loan.address}"></td>
+            <td><input type="text" id="maritalStatus" value="${loan.maritalStatus}"></td>
+            <td><input type="text" id="contact" value="${loan.contact}"></td>
+            <td><input type="text" id="loanAmount" value="${loan.loanAmount}"></td>
+            <td><input type="text" id="loanDuration" value="${loan.loanDuration}"></td>
+            <td><button onclick="updateLoan('${loan.ssn}')">Update</button></td>
+            <td><button class="deleteBtn" onclick="deleteLoan(${loan.ssn})">Delete</button></td>
+        </tr>
+    `;
+}
+
+// Function to Update Loan Data
+function updateLoan(ssn) {
+    const loans = JSON.parse(localStorage.getItem("loans")) || [];
+
+    const updatedLoan = {
+        ssn: ssn,
+        name: document.getElementById("name").value,
+        occupation: document.getElementById("occupation").value,
+        employerName: document.getElementById("employerName").value,
+        employerAddress: document.getElementById("employerAddress").value,
+        email: document.getElementById("email").value,
+        address: document.getElementById("address").value,
+        maritalStatus: document.getElementById("maritalStatus").value,
+        contact: document.getElementById("contact").value,
+        loanAmount: document.getElementById("loanAmount").value,
+        loanDuration: document.getElementById("loanDuration").value
+    };
+
+    // Find and Update the Loan
+    const updatedLoans = loans.map(loan =>
+        loan.ssn === ssn ? updatedLoan : loan
+    );
+
+    // Save to Local Storage
+    localStorage.setItem("loans", JSON.stringify(updatedLoans));
+
+    const successMessage = document.getElementById("successMessage");
+    successMessage.innerText = "Loan information updated successfully!";
+    successMessage.style.display = "block";
+
+    setTimeout(() => {
+        successMessage.style.display = "none";
+    }, 3000);
+}
+
+// Function to Delete Loan Data
+function deleteLoan(ssn) {
+    let loans = JSON.parse(localStorage.getItem("loans")) || [];
+    const updatedLoans = loans.filter(loan => loan.ssn.toString() !== ssn.toString());
+
+    console.log("Updated Loans:", updatedLoans);
+    localStorage.setItem("loans", JSON.stringify(updatedLoans));
+    const successMessage = document.getElementById("successMessage");
+    successMessage.textContent = "Loan deleted successfully!";
+    successMessage.style.display = "block";
+
+    document.getElementById("loanData").innerHTML = "";
+    setTimeout(() => successMessage.style.display = "none", 2000);
+}
+
+
+-------------login.js-----------
+
+// login.js
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const empId = document.getElementById("loginEmpId").value;
+    const password = document.getElementById("loginPassword").value;
+
+    // Retrieve stored employee data based on empId
+    const storedData = JSON.parse(localStorage.getItem(empId));
+
+    if (storedData && storedData.empId == empId && storedData.password === password) {
+        // Show acknowledgment and redirect
+        document.querySelector('.container').style.display = 'none'; // Hide form
+        document.getElementById('loginAcknowledge').style.display = 'block'; // Show login acknowledgment
+
+        setTimeout(function() {
+            // Redirect to home page after 2 seconds
+            window.location.href = "index.html";
+        }, 2000);
+    } else {
+        // Invalid credentials
+        alert("Invalid Employee ID or Password.");
+    }
+});
+
+
+--------------registration.js----------------
+
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const address = document.getElementById("address").value;
+    const contact = document.getElementById("contact").value;
+
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    // Check if the email already exists in localStorage
+    for (let i = 0; i < localStorage.length; i++) {
+        const empData = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        if (empData && empData.email === email) {
+            alert("Email is already registered. Try Again!");
+            return;
+        }
+    }
+
+    // Generate a unique Employee ID (7 digit random number)
+    let empId;
+    do {
+        empId = Math.floor(1000000 + Math.random() * 9000000); // Random 7-digit number
+    } while (localStorage.getItem(empId.toString())); // Check if Employee ID already exists in localStorage
+
+    // Create employee data object
+    const employeeData = {
+        empId: empId,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password,
+        address: address,
+        contact: contact
+    };
+
+    // Store Employee Data in LocalStorage with unique key based on empId
+    localStorage.setItem(empId.toString(), JSON.stringify(employeeData));
+
+    // Display Acknowledgment Screen with Employee Details
+    document.querySelector('.main-container').style.display = 'none'; // Hide form
+    document.getElementById('acknowledgment').style.display = 'block'; // Show acknowledgment popup
+
+    const empDetails = `Employee ID: ${empId} <br> Name: ${firstName} ${lastName} <br> Email: ${email}`;
+    document.getElementById('empDetails').innerHTML = empDetails;
+});
+
+
+--------------transaction.js--------------
+
+document.addEventListener("DOMContentLoaded", function () {
+    setTransactionId();
+
+    document.getElementById("transactionForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        registerTransaction();
+    });
+});
+
+function setTransactionId() {
+    let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+    let nextId = transactions.length > 0 ? transactions[transactions.length - 1].id + 1 : 1;
+    document.getElementById("transactionId").value = nextId;
+}
+
+function registerTransaction() {
+    let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
+    let transaction = {
+        id: parseInt(document.getElementById("transactionId").value), 
+        ssn: document.getElementById("ssnId").value,
+        name: document.getElementById("customerName").value,
+        accountId: document.getElementById("accountId").value,
+        adhaar: document.getElementById("adhaarCard").value,
+        pan: document.getElementById("panCard").value,
+        address: document.getElementById("address").value,
+        date: document.getElementById("date").value,
+        contact: document.getElementById("contactNumber").value,
+        mode: document.getElementById("modeOfTransaction").value,
+        amount: document.getElementById("amount").value,
+        type: document.getElementById("transactionType").value
+    };
+
+    transactions.push(transaction);
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+    
+    setTimeout(() => {
+        document.getElementById("message").innerText = "";
+        document.getElementById("transactionForm").reset();
+        setTransactionId(); 
+    }, 200);
+
+    alert('Transaction Successful!!');
+}
+
+*/
